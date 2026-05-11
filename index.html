@@ -753,6 +753,13 @@
       overflow: hidden;
       transition: transform 0.4s;
     }
+    .instagram__placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
     .instagram__placeholder:hover { transform: scale(1.05); z-index: 1; }
     .instagram__link {
       display: inline-flex;
@@ -1003,11 +1010,10 @@
 
   <!-- ===== GALLERY BANNER ===== -->
   <div class="gallery-banner">
-    <!-- 写真を差し替えてください: <img src="images/gallery-1.jpg" alt="サロン写真"> -->
-    <div class="photo"><span class="photo__label">Photo 1</span></div>
-    <div class="photo"><span class="photo__label">Photo 2</span></div>
-    <div class="photo"><span class="photo__label">Photo 3</span></div>
-    <div class="photo"><span class="photo__label">Photo 4</span></div>
+    <div class="photo"><img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&h=600&fit=crop" alt="ハーブとアロマオイル"></div>
+    <div class="photo"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=600&fit=crop" alt="スパトリートメント"></div>
+    <div class="photo"><img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=600&h=600&fit=crop" alt="リラクゼーション"></div>
+    <div class="photo"><img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&h=600&fit=crop" alt="キャンドルとタオル"></div>
   </div>
 
   <!-- ===== ABOUT ===== -->
@@ -1026,12 +1032,11 @@
 
       <!-- サロン写真グリッド -->
       <div class="about__photos fade-in">
-        <!-- 各 .photo 内に <img src="images/xxx.jpg" alt="..."> を追加してください -->
-        <div class="photo"><span class="photo__label">サロン外観</span></div>
-        <div class="photo"><span class="photo__label">施術室</span></div>
-        <div class="photo"><span class="photo__label">ハーブ</span></div>
-        <div class="photo"><span class="photo__label">珈琲スペース</span></div>
-        <div class="photo"><span class="photo__label">インテリア</span></div>
+        <div class="photo"><img src="https://images.unsplash.com/photo-1559599238-308793637427?w=800&h=800&fit=crop" alt="サロン外観"></div>
+        <div class="photo"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=500&h=400&fit=crop" alt="施術室"></div>
+        <div class="photo"><img src="https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?w=500&h=400&fit=crop" alt="ハーブ"></div>
+        <div class="photo"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=400&fit=crop" alt="珈琲スペース"></div>
+        <div class="photo"><img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=500&h=400&fit=crop" alt="インテリア"></div>
       </div>
 
       <div class="about__features">
@@ -1060,7 +1065,7 @@
       <div class="concept__body fade-in">
         <div class="concept__image">
           <div class="photo">
-            <!-- <img src="images/concept.jpg" alt="コンセプト"> -->
+            <img src="https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?w=800&h=1000&fit=crop" alt="ハーブスチーム">
             <span class="photo__label">Concept Photo</span>
           </div>
           <svg class="concept__image-plumeria" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -1104,8 +1109,7 @@
         <div class="owner__photo-area">
           <div class="owner__portrait">
             <div class="photo">
-              <!-- <img src="images/owner.jpg" alt="オーナー"> -->
-              <span class="photo__label">Owner Photo</span>
+              <img src="https://images.unsplash.com/photo-1594744803329-e58b31239f85?w=500&h=640&fit=crop&crop=face" alt="オーナー">
             </div>
           </div>
           <div class="owner__name-area">
@@ -1140,7 +1144,6 @@
           <div class="owner__qualifications">
             <p class="owner__qual-title">Qualifications</p>
             <ul class="owner__qual-list">
-              <!-- 実際の資格に差し替えてください -->
               <li>ハマム浴セラピスト</li>
               <li>ヘッドスパニスト</li>
               <li>アロマテラピー検定</li>
@@ -1160,9 +1163,8 @@
       <div class="service__list">
         <div class="service__item fade-in">
           <div class="service__item-photo">
-            <div class="photo" style="background:linear-gradient(135deg,#e8c0bc,#d4a0a0)">
-              <!-- <img src="images/service-hammam.jpg" alt="ハマム浴"> -->
-              <span class="photo__label">ハマム浴</span>
+            <div class="photo">
+              <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=500&fit=crop" alt="ハマム浴">
             </div>
           </div>
           <div class="service__item-body">
@@ -1189,12 +1191,11 @@
 
   <!-- ===== PHOTO SHOWCASE ===== -->
   <div class="photo-showcase">
-    <!-- 写真を差し替えてください -->
-    <div class="photo" style="background:linear-gradient(135deg,#e0b5b0,#d4a0a0)"><span class="photo__label">Salon 1</span></div>
-    <div class="photo" style="background:linear-gradient(135deg,#f0d0cc,#e0bab5)"><span class="photo__label">Salon 2</span></div>
-    <div class="photo" style="background:linear-gradient(135deg,#f5ddd8,#e8c5c0)"><span class="photo__label">Salon 3</span></div>
-    <div class="photo" style="background:linear-gradient(135deg,#edd0cc,#dca8a8)"><span class="photo__label">Salon 4</span></div>
-    <div class="photo" style="background:linear-gradient(135deg,#f2d8d5,#e0b5b0)"><span class="photo__label">Salon 5</span></div>
+    <div class="photo"><img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&h=960&fit=crop" alt="アロマオイル"></div>
+    <div class="photo"><img src="https://images.unsplash.com/photo-1552693673-1bf958298935?w=600&h=480&fit=crop" alt="ハーブティー"></div>
+    <div class="photo"><img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=600&h=480&fit=crop" alt="スパ空間"></div>
+    <div class="photo"><img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&h=480&fit=crop" alt="タオルとキャンドル"></div>
+    <div class="photo"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=480&fit=crop" alt="スキンケア"></div>
   </div>
 
   <!-- ===== FLOW ===== -->
@@ -1209,9 +1210,8 @@
 
         <div class="flow__step">
           <div class="flow__step-photo">
-            <div class="photo" style="background:linear-gradient(135deg,#f0d0cc,#e0bab5)">
-              <!-- <img src="images/flow-1.jpg" alt="ご予約"> -->
-              <span class="photo__label">Reservation</span>
+            <div class="photo">
+              <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=700&h=500&fit=crop" alt="ご予約">
             </div>
           </div>
           <div class="flow__step-content">
@@ -1226,9 +1226,8 @@
 
         <div class="flow__step">
           <div class="flow__step-photo">
-            <div class="photo" style="background:linear-gradient(135deg,#e8c5c0,#d4a8a5)">
-              <!-- <img src="images/flow-2.jpg" alt="ご来店"> -->
-              <span class="photo__label">Arrival</span>
+            <div class="photo">
+              <img src="https://images.unsplash.com/photo-1559599238-308793637427?w=700&h=500&fit=crop" alt="ご来店">
             </div>
           </div>
           <div class="flow__step-content">
@@ -1243,9 +1242,8 @@
 
         <div class="flow__step">
           <div class="flow__step-photo">
-            <div class="photo" style="background:linear-gradient(135deg,#f5ddd8,#e0b5b0)">
-              <!-- <img src="images/flow-3.jpg" alt="カウンセリング"> -->
-              <span class="photo__label">Counseling</span>
+            <div class="photo">
+              <img src="https://images.unsplash.com/photo-1556745753-b2904692b3cd?w=700&h=500&fit=crop" alt="カウンセリング">
             </div>
           </div>
           <div class="flow__step-content">
@@ -1260,9 +1258,8 @@
 
         <div class="flow__step">
           <div class="flow__step-photo">
-            <div class="photo" style="background:linear-gradient(135deg,#edd0cc,#daa8a5)">
-              <!-- <img src="images/flow-4.jpg" alt="施術"> -->
-              <span class="photo__label">Treatment</span>
+            <div class="photo">
+              <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=700&h=500&fit=crop" alt="施術">
             </div>
           </div>
           <div class="flow__step-content">
@@ -1277,9 +1274,8 @@
 
         <div class="flow__step">
           <div class="flow__step-photo">
-            <div class="photo" style="background:linear-gradient(135deg,#f2d5d0,#e8bfbc)">
-              <!-- <img src="images/flow-5.jpg" alt="アフタータイム"> -->
-              <span class="photo__label">After Time</span>
+            <div class="photo">
+              <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=700&h=500&fit=crop" alt="アフタータイム">
             </div>
           </div>
           <div class="flow__step-content">
@@ -1471,14 +1467,14 @@
         </div>
         <!-- サロン周辺・内観写真 -->
         <div class="info__photos fade-in">
-          <div class="photo" style="background:linear-gradient(135deg,#f0d0cc,#e0bab5)">
-            <span class="photo__label">外観</span>
+          <div class="photo">
+            <img src="https://images.unsplash.com/photo-1559599238-308793637427?w=600&h=450&fit=crop" alt="外観">
           </div>
-          <div class="photo" style="background:linear-gradient(135deg,#f5ddd8,#e8c5c0)">
-            <span class="photo__label">入口</span>
+          <div class="photo">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=450&fit=crop" alt="入口">
           </div>
-          <div class="photo" style="background:linear-gradient(135deg,#edd0cc,#dca8a8)">
-            <span class="photo__label">駐車場</span>
+          <div class="photo">
+            <img src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=600&h=450&fit=crop" alt="駐車場">
           </div>
         </div>
       </div>
@@ -1492,12 +1488,12 @@
       <h2 class="section__heading">最新情報はInstagramで</h2>
       <div class="section__divider"></div>
       <div class="instagram__grid fade-in">
-        <div class="instagram__placeholder"></div>
-        <div class="instagram__placeholder"></div>
-        <div class="instagram__placeholder"></div>
-        <div class="instagram__placeholder"></div>
-        <div class="instagram__placeholder"></div>
-        <div class="instagram__placeholder"></div>
+        <div class="instagram__placeholder"><img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=300&h=300&fit=crop" alt="Instagram 1"></div>
+        <div class="instagram__placeholder"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=300&h=300&fit=crop" alt="Instagram 2"></div>
+        <div class="instagram__placeholder"><img src="https://images.unsplash.com/photo-1552693673-1bf958298935?w=300&h=300&fit=crop" alt="Instagram 3"></div>
+        <div class="instagram__placeholder"><img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=300&h=300&fit=crop" alt="Instagram 4"></div>
+        <div class="instagram__placeholder"><img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=300&h=300&fit=crop" alt="Instagram 5"></div>
+        <div class="instagram__placeholder"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=300&h=300&fit=crop" alt="Instagram 6"></div>
       </div>
       <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="instagram__link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
