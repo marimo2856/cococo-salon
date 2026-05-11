@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>安眠Salon COCOCO | 熊本県玉名市のハマム浴&ヘッドスパサロン</title>
+  <meta name="description" content="熊本県玉名市の安眠Salon COCOCO。熊本希少のハマム浴とハーブスチーム、炭酸ヘッドスパで心と体を癒す完全予約制プライベートサロン。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+JP:wght@200;300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ============ RESET & BASE ============ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+      color: #4a3a3a;
+      background: #fffbf9;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ============ PLUMERIA SVG DECORATIONS ============ */
+    .plumeria {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.15;
+    }
+    .plumeria--accent { opacity: 0.25; }
+
+    /* ============ PHOTO PLACEHOLDER ============ */
+    .photo {
+      background: linear-gradient(135deg, #f2d5d0 0%, #e8c5c0 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(255,255,255,0.3);
+      margin: 8px;
+      pointer-events: none;
+    }
+    .photo__label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+    }
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+
+    /* ============ NAVIGATION ============ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255, 251, 249, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(200, 120, 120, 0.1);
+      transition: box-shadow 0.3s;
+    }
+    .nav.scrolled { box-shadow: 0 2px 20px rgba(180, 100, 100, 0.08); }
+    .nav__inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav__logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #b0545e;
+    }
+    .nav__links { display: flex; gap: 24px; list-style: none; }
+    .nav__links a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: #7a5a5a;
+      transition: color 0.3s;
+      position: relative;
+    }
+    .nav__links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: #c9707a;
+      transition: width 0.3s;
+    }
+    .nav__links a:hover { color: #c9707a; }
+    .nav__links a:hover::after { width: 100%; }
+    .nav__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .nav__hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #b0545e;
+      transition: 0.3s;
+    }
+
+    /* ============ HERO ============ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(165deg, #fff5f5 0%, #fffbf9 30%, #fdf0ed 60%, #f9e8e4 100%);
+      overflow: hidden;
+    }
+    .hero__bg-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(ellipse 600px 400px at 15% 20%, rgba(200, 112, 122, 0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 500px 500px at 85% 75%, rgba(220, 160, 150, 0.07) 0%, transparent 70%);
+    }
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      padding: 120px 24px 80px;
+    }
+    .hero__sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: #c9707a;
+      margin-bottom: 20px;
+    }
+    .hero__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: #8a4a52;
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+    .hero__title-jp {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(0.85rem, 1.8vw, 1rem);
+      font-weight: 200;
+      letter-spacing: 0.25em;
+      color: #b88a8a;
+      margin-bottom: 40px;
+    }
+    .hero__tagline {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+      font-weight: 300;
+      line-height: 2.2;
+      color: #7a5a5a;
+      max-width: 480px;
+      margin: 0 auto 48px;
+    }
+    .hero__cta {
+      display: inline-block;
+      padding: 14px 48px;
+      border: 1px solid #c9707a;
+      color: #c9707a;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      transition: all 0.4s;
+    }
+    .hero__cta:hover {
+      background: #c9707a;
+      color: #fff;
+    }
+    .hero .plumeria--1 { top: 8%; right: 6%; width: 180px; transform: rotate(15deg); }
+    .hero .plumeria--2 { bottom: 12%; left: 4%; width: 140px; transform: rotate(-20deg); }
+    .hero .plumeria--3 { top: 35%; left: 8%; width: 80px; transform: rotate(45deg); opacity: 0.1; }
+    .hero .plumeria--4 { bottom: 25%; right: 12%; width: 100px; transform: rotate(-35deg); opacity: 0.1; }
+
+    /* ============ GALLERY (Photo Banner) ============ */
+    .gallery-banner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+    }
+    .gallery-banner .photo {
+      aspect-ratio: 1;
+      transition: transform 0.5s;
+    }
+    .gallery-banner .photo:hover { transform: scale(1.03); z-index: 1; }
+
+    /* ============ SECTIONS COMMON ============ */
+    .section {
+      padding: 100px 24px;
+      position: relative;
+    }
+    .section__inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .section__label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      color: #c9707a;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .section__heading {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: #7a4a52;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .section__divider {
+      width: 40px;
+      height: 1px;
+      background: #d4a0a0;
+      margin: 0 auto 48px;
+    }
+
+    /* ============ ABOUT ============ */
+    .about { background: #fff; }
+    .about__text {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 2.4;
+      color: #5a4a4a;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .about__photos {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 200px 200px;
+      gap: 12px;
+      margin: 48px 0;
+    }
+    .about__photos .photo:first-child {
+      grid-row: 1 / 3;
+      background: linear-gradient(135deg, #e8c0bc 0%, #d4a0a0 100%);
+    }
+    .about__photos .photo:nth-child(2) { background: linear-gradient(135deg, #f0d0cc 0%, #e0b5b0 100%); }
+    .about__photos .photo:nth-child(3) { background: linear-gradient(135deg, #f5ddd8 0%, #e8c5c0 100%); }
+    .about__photos .photo:nth-child(4) { background: linear-gradient(135deg, #edd0cc 0%, #daa8a5 100%); }
+    .about__photos .photo:nth-child(5) { background: linear-gradient(135deg, #f2d8d5 0%, #e0bab5 100%); }
+    .about__features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 20px;
+    }
+    .about__feature {
+      text-align: center;
+      padding: 32px 20px;
+      border: 1px solid rgba(200, 160, 160, 0.2);
+      transition: all 0.4s;
+    }
+    .about__feature:hover {
+      border-color: rgba(200, 112, 122, 0.3);
+      box-shadow: 0 8px 30px rgba(200, 112, 122, 0.06);
+    }
+    .about__feature-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #8a4a52;
+      margin-bottom: 12px;
+    }
+    .about__feature-text {
+      font-size: 0.85rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: #7a6a6a;
+    }
+
+    /* ============ CONCEPT ============ */
+    .concept {
+      background: linear-gradient(180deg, #fdf5f3 0%, #fff9f7 100%);
+      overflow: hidden;
+    }
+    .concept__body {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+    .concept__image {
+      flex: 0 0 380px;
+      height: 480px;
+      position: relative;
+      overflow: hidden;
+    }
+    .concept__image .photo {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #f2d5d0 0%, #e8bfbc 50%, #dca8a8 100%);
+    }
+    .concept__image-plumeria {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+      opacity: 0.3;
+      z-index: 1;
+    }
+    .concept__text-area { flex: 1; }
+    .concept__quote {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.3rem;
+      font-weight: 300;
+      line-height: 2;
+      color: #8a4a52;
+      margin-bottom: 28px;
+      padding-left: 20px;
+      border-left: 2px solid #d4a0a0;
+    }
+    .concept__desc {
+      font-size: 0.9rem;
+      font-weight: 300;
+      line-height: 2.2;
+      color: #6a5555;
+    }
+
+    /* ============ OWNER ============ */
+    .owner { background: #fff; }
+    .owner__body {
+      display: flex;
+      gap: 52px;
+      align-items: center;
+    }
+    .owner__photo-area {
+      flex: 0 0 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .owner__portrait {
+      width: 220px;
+      height: 280px;
+      border-radius: 140px 140px 20px 20px;
+      background: linear-gradient(135deg, #f0d0cc 0%, #dca8a8 100%);
+      overflow: hidden;
+      position: relative;
+    }
+    .owner__portrait .photo {
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+    }
+    .owner__portrait .photo::after { border-radius: inherit; margin: 6px; }
+    .owner__name-area { text-align: center; }
+    .owner__role {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      color: #c9707a;
+      margin-bottom: 4px;
+    }
+    .owner__name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #7a4a52;
+      letter-spacing: 0.1em;
+    }
+    .owner__text-area { flex: 1; }
+    .owner__greeting {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: #8a4a52;
+      margin-bottom: 24px;
+      line-height: 1.8;
+    }
+    .owner__message {
+      font-size: 0.9rem;
+      font-weight: 300;
+      line-height: 2.2;
+      color: #5a4a4a;
+    }
+    .owner__message p + p { margin-top: 16px; }
+    .owner__qualifications {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(200, 160, 160, 0.2);
+    }
+    .owner__qual-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: #c9707a;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .owner__qual-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .owner__qual-list li {
+      font-size: 0.78rem;
+      padding: 5px 14px;
+      border: 1px solid rgba(200, 112, 122, 0.2);
+      color: #8a6a6a;
+      letter-spacing: 0.03em;
+    }
+
+    /* ============ SERVICE ============ */
+    .service { background: linear-gradient(180deg, #fdf5f3 0%, #fff9f7 100%); }
+    .service__list {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin-top: 20px;
+    }
+    .service__item {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      background: #fff;
+      border: 1px solid rgba(200, 160, 160, 0.15);
+      overflow: hidden;
+      transition: box-shadow 0.4s;
+    }
+    .service__item:hover {
+      box-shadow: 0 12px 40px rgba(200, 112, 122, 0.08);
+    }
+    .service__item-photo {
+      flex: 0 0 260px;
+      min-height: 220px;
+    }
+    .service__item-photo .photo {
+      width: 100%;
+      height: 100%;
+    }
+    .service__item-body {
+      padding: 36px 40px;
+      flex: 1;
+    }
+    .service__item-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .service__item-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: #7a4a52;
+    }
+    .service__item-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #c9707a;
+      letter-spacing: 0.03em;
+    }
+    .service__item-desc {
+      font-size: 0.88rem;
+      font-weight: 300;
+      line-height: 2;
+      color: #6a5a5a;
+    }
+    .service__item-tags {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .service__item-tag {
+      font-size: 0.75rem;
+      padding: 4px 14px;
+      border: 1px solid rgba(200, 112, 122, 0.25);
+      color: #b0646e;
+      letter-spacing: 0.05em;
+    }
+
+    /* ============ PHOTO SHOWCASE (mid-page) ============ */
+    .photo-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 240px 240px;
+      gap: 4px;
+    }
+    .photo-showcase .photo:first-child {
+      grid-column: 1 / 2;
+      grid-row: 1 / 3;
+    }
+    .photo-showcase .photo { transition: transform 0.5s; }
+    .photo-showcase .photo:hover { transform: scale(1.02); z-index: 1; }
+
+    /* ============ FLOW ============ */
+    .flow {
+      background: linear-gradient(180deg, #fdf5f3 0%, #fffaf8 100%);
+    }
+    .flow__steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 20px;
+    }
+    .flow__step {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      position: relative;
+      min-height: 200px;
+    }
+    .flow__step:nth-child(even) { flex-direction: row-reverse; }
+    .flow__step-photo {
+      flex: 0 0 340px;
+      overflow: hidden;
+    }
+    .flow__step-photo .photo {
+      width: 100%;
+      height: 100%;
+      min-height: 200px;
+    }
+    .flow__step-content {
+      flex: 1;
+      padding: 40px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #fff;
+      position: relative;
+    }
+    .flow__step:nth-child(even) .flow__step-content {
+      background: #fffaf8;
+    }
+    .flow__step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: #d4a0a0;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .flow__step-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: #7a4a52;
+      margin-bottom: 10px;
+    }
+    .flow__step-text {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: #7a6a6a;
+      line-height: 1.9;
+    }
+    .flow__step-connector {
+      position: absolute;
+      left: 50%;
+      bottom: -16px;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 32px;
+      background: #d4a0a0;
+      z-index: 2;
+    }
+
+    /* ============ FAQ ============ */
+    .faq { background: #fff; }
+    .faq__list {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .faq__item {
+      border-bottom: 1px solid rgba(200, 160, 160, 0.2);
+    }
+    .faq__question {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 24px 40px 24px 0;
+      cursor: pointer;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: #6a4a4a;
+      line-height: 1.7;
+      position: relative;
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+    }
+    .faq__question:hover { color: #8a4a52; }
+    .faq__q-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #c9707a;
+      flex-shrink: 0;
+    }
+    .faq__question::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 12px;
+      height: 12px;
+      border-right: 1px solid #c9707a;
+      border-bottom: 1px solid #c9707a;
+      transform: translateY(-70%) rotate(45deg);
+      transition: transform 0.3s;
+    }
+    .faq__item.open .faq__question::after {
+      transform: translateY(-30%) rotate(-135deg);
+    }
+    .faq__answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+    .faq__item.open .faq__answer {
+      max-height: 300px;
+    }
+    .faq__answer-inner {
+      padding: 0 0 24px 36px;
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+    }
+    .faq__a-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #d4a0a0;
+      flex-shrink: 0;
+    }
+    .faq__a-text {
+      font-size: 0.88rem;
+      font-weight: 300;
+      line-height: 2;
+      color: #6a5a5a;
+    }
+
+    /* ============ INFO ============ */
+    .info { background: linear-gradient(180deg, #fdf5f3 0%, #fff9f7 100%); }
+    .info__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .info__table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .info__table tr {
+      border-bottom: 1px solid rgba(200, 160, 160, 0.15);
+    }
+    .info__table th {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 400;
+      font-size: 0.85rem;
+      color: #8a5a5a;
+      text-align: left;
+      padding: 16px 12px 16px 0;
+      width: 100px;
+      vertical-align: top;
+    }
+    .info__table td {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: #5a4a4a;
+      padding: 16px 0;
+      line-height: 1.8;
+    }
+    .info__map {
+      width: 100%;
+      height: 340px;
+      background: #f2e8e5;
+      border: 1px solid rgba(200, 160, 160, 0.2);
+      overflow: hidden;
+    }
+    .info__map iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .info__photos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 48px;
+      grid-column: 1 / -1;
+    }
+    .info__photos .photo {
+      aspect-ratio: 4/3;
+    }
+
+    /* ============ INSTAGRAM ============ */
+    .instagram {
+      background: #fff;
+      text-align: center;
+    }
+    .instagram__grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 8px;
+      margin: 40px auto 36px;
+      max-width: 800px;
+    }
+    .instagram__placeholder {
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, #f2d5d0 0%, #e8c5c0 100%);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s;
+    }
+    .instagram__placeholder:hover { transform: scale(1.05); z-index: 1; }
+    .instagram__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 40px;
+      border: 1px solid #c9707a;
+      color: #c9707a;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      transition: all 0.4s;
+    }
+    .instagram__link:hover {
+      background: #c9707a;
+      color: #fff;
+    }
+    .instagram__link svg { width: 18px; height: 18px; }
+
+    /* ============ CTA BANNER ============ */
+    .cta-banner {
+      padding: 80px 24px;
+      background: linear-gradient(135deg, #8a4a52 0%, #a85a62 40%, #c9707a 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(ellipse 400px 300px at 20% 50%, rgba(255,255,255,0.06) 0%, transparent 70%),
+                         radial-gradient(ellipse 400px 300px at 80% 50%, rgba(255,255,255,0.04) 0%, transparent 70%);
+    }
+    .cta-banner__text {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.9);
+      letter-spacing: 0.15em;
+      line-height: 2;
+      margin-bottom: 32px;
+      position: relative;
+    }
+    .cta-banner__btn {
+      display: inline-block;
+      padding: 16px 56px;
+      border: 1px solid rgba(255,255,255,0.7);
+      color: #fff;
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      transition: all 0.4s;
+      position: relative;
+    }
+    .cta-banner__btn:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: #fff;
+    }
+
+    /* ============ FOOTER ============ */
+    .footer {
+      background: #3a2a2a;
+      color: rgba(255, 255, 255, 0.5);
+      padding: 48px 24px 32px;
+      text-align: center;
+    }
+    .footer__logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 16px;
+    }
+    .footer__address {
+      font-size: 0.8rem;
+      font-weight: 300;
+      line-height: 1.9;
+      margin-bottom: 24px;
+    }
+    .footer__social {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+    .footer__social a {
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+    .footer__social a:hover {
+      border-color: rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.05);
+    }
+    .footer__social svg { width: 16px; height: 16px; fill: rgba(255,255,255,0.5); }
+    .footer__copy {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+    }
+
+    /* ============ ANIMATIONS ============ */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 768px) {
+      .nav__links { display: none; }
+      .nav__links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: rgba(255, 251, 249, 0.98);
+        padding: 24px;
+        gap: 20px;
+        border-bottom: 1px solid rgba(200, 120, 120, 0.1);
+      }
+      .nav__hamburger { display: flex; }
+      .gallery-banner { grid-template-columns: repeat(2, 1fr); }
+      .about__features { grid-template-columns: 1fr; gap: 20px; }
+      .about__photos {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 180px 180px 180px;
+      }
+      .about__photos .photo:first-child { grid-row: 1 / 2; grid-column: 1 / 3; }
+      .concept__body { flex-direction: column; gap: 40px; }
+      .concept__image { flex: none; width: 100%; height: 300px; }
+      .owner__body { flex-direction: column; text-align: center; }
+      .owner__photo-area { flex: none; }
+      .owner__qualifications { text-align: left; }
+      .owner__qual-list { justify-content: center; }
+      .service__item { flex-direction: column; }
+      .service__item-photo { flex: none; height: 200px; }
+      .photo-showcase {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 200px 200px 200px;
+      }
+      .photo-showcase .photo:first-child { grid-column: 1 / 3; grid-row: 1 / 2; }
+      .flow__step,
+      .flow__step:nth-child(even) {
+        flex-direction: column;
+      }
+      .flow__step-photo { flex: none; height: 200px; }
+      .flow__step-content { padding: 28px 24px; }
+      .info__grid { grid-template-columns: 1fr; gap: 40px; }
+      .info__photos { grid-template-columns: 1fr 1fr; }
+      .instagram__grid { grid-template-columns: repeat(3, 1fr); }
+      .service__item-body { padding: 24px 20px; }
+      .hero .plumeria--1 { width: 120px; right: 2%; }
+      .hero .plumeria--2 { width: 100px; left: 2%; }
+      .hero .plumeria--3, .hero .plumeria--4 { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">COCOCO</a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#owner">Owner</a></li>
+        <li><a href="#service">Service</a></li>
+        <li><a href="#flow">Flow</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#info">Info</a></li>
+        <li><a href="#instagram">Instagram</a></li>
+      </ul>
+      <button class="nav__hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero__bg-pattern"></div>
+    <!-- Plumeria flowers -->
+    <svg class="plumeria plumeria--1 plumeria--accent" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <g fill="#c9707a">
+        <ellipse cx="100" cy="50" rx="28" ry="50" transform="rotate(0 100 100)"/>
+        <ellipse cx="100" cy="50" rx="28" ry="50" transform="rotate(72 100 100)"/>
+        <ellipse cx="100" cy="50" rx="28" ry="50" transform="rotate(144 100 100)"/>
+        <ellipse cx="100" cy="50" rx="28" ry="50" transform="rotate(216 100 100)"/>
+        <ellipse cx="100" cy="50" rx="28" ry="50" transform="rotate(288 100 100)"/>
+        <circle cx="100" cy="100" r="18" fill="#f5e0d0"/>
+      </g>
+    </svg>
+    <svg class="plumeria plumeria--2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <g fill="#d4a0a0">
+        <ellipse cx="100" cy="50" rx="26" ry="48" transform="rotate(15 100 100)"/>
+        <ellipse cx="100" cy="50" rx="26" ry="48" transform="rotate(87 100 100)"/>
+        <ellipse cx="100" cy="50" rx="26" ry="48" transform="rotate(159 100 100)"/>
+        <ellipse cx="100" cy="50" rx="26" ry="48" transform="rotate(231 100 100)"/>
+        <ellipse cx="100" cy="50" rx="26" ry="48" transform="rotate(303 100 100)"/>
+        <circle cx="100" cy="100" r="16" fill="#f5e0d0"/>
+      </g>
+    </svg>
+    <svg class="plumeria plumeria--3" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <g fill="#e8bfbc">
+        <ellipse cx="100" cy="52" rx="24" ry="46" transform="rotate(10 100 100)"/>
+        <ellipse cx="100" cy="52" rx="24" ry="46" transform="rotate(82 100 100)"/>
+        <ellipse cx="100" cy="52" rx="24" ry="46" transform="rotate(154 100 100)"/>
+        <ellipse cx="100" cy="52" rx="24" ry="46" transform="rotate(226 100 100)"/>
+        <ellipse cx="100" cy="52" rx="24" ry="46" transform="rotate(298 100 100)"/>
+        <circle cx="100" cy="100" r="14" fill="#f5e0d0"/>
+      </g>
+    </svg>
+    <svg class="plumeria plumeria--4" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <g fill="#c9707a">
+        <ellipse cx="100" cy="54" rx="22" ry="44" transform="rotate(-5 100 100)"/>
+        <ellipse cx="100" cy="54" rx="22" ry="44" transform="rotate(67 100 100)"/>
+        <ellipse cx="100" cy="54" rx="22" ry="44" transform="rotate(139 100 100)"/>
+        <ellipse cx="100" cy="54" rx="22" ry="44" transform="rotate(211 100 100)"/>
+        <ellipse cx="100" cy="54" rx="22" ry="44" transform="rotate(283 100 100)"/>
+        <circle cx="100" cy="100" r="13" fill="#f5e0d0"/>
+      </g>
+    </svg>
+
+    <div class="hero__content">
+      <p class="hero__sub">Private Relaxation Salon</p>
+      <h1 class="hero__title">COCOCO</h1>
+      <p class="hero__title-jp">安眠サロン ココココ</p>
+      <p class="hero__tagline">
+        ハーブの香りに包まれて<br>
+        深い眠りへと導く<br>
+        あなただけの癒しの時間
+      </p>
+      <a href="https://beauty.hotpepper.jp/kr/slnH000737938/" target="_blank" rel="noopener" class="hero__cta">RESERVATION</a>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY BANNER ===== -->
+  <div class="gallery-banner">
+    <!-- 写真を差し替えてください: <img src="images/gallery-1.jpg" alt="サロン写真"> -->
+    <div class="photo"><span class="photo__label">Photo 1</span></div>
+    <div class="photo"><span class="photo__label">Photo 2</span></div>
+    <div class="photo"><span class="photo__label">Photo 3</span></div>
+    <div class="photo"><span class="photo__label">Photo 4</span></div>
+  </div>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section about" id="about">
+    <div class="section__inner fade-in">
+      <p class="section__label">About</p>
+      <h2 class="section__heading">安眠Salon COCOCOについて</h2>
+      <div class="section__divider"></div>
+      <p class="about__text">
+        熊本県玉名市にある完全予約制のプライベートサロン。<br>
+        自家焙煎珈琲COCOCOに併設された隠れ家のような空間で、<br>
+        熊本では希少な「ハマム浴」をご体験いただけます。<br><br>
+        施術者がおひとりおひとりに寄り添い、<br>
+        心と体の疲れをほどいていく ── そんなひとときを。
+      </p>
+
+      <!-- サロン写真グリッド -->
+      <div class="about__photos fade-in">
+        <!-- 各 .photo 内に <img src="images/xxx.jpg" alt="..."> を追加してください -->
+        <div class="photo"><span class="photo__label">サロン外観</span></div>
+        <div class="photo"><span class="photo__label">施術室</span></div>
+        <div class="photo"><span class="photo__label">ハーブ</span></div>
+        <div class="photo"><span class="photo__label">珈琲スペース</span></div>
+        <div class="photo"><span class="photo__label">インテリア</span></div>
+      </div>
+
+      <div class="about__features">
+        <div class="about__feature fade-in">
+          <h3 class="about__feature-title">完全予約制</h3>
+          <p class="about__feature-text">お客さまだけの贅沢な時間を<br>お約束いたします</p>
+        </div>
+        <div class="about__feature fade-in">
+          <h3 class="about__feature-title">完全個室</h3>
+          <p class="about__feature-text">周りを気にせず<br>心からリラックスできる空間</p>
+        </div>
+        <div class="about__feature fade-in">
+          <h3 class="about__feature-title">女性施術者</h3>
+          <p class="about__feature-text">丁寧なカウンセリングで<br>お体の状態に合わせた施術を</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONCEPT ===== -->
+  <section class="section concept" id="concept">
+    <div class="section__inner">
+      <p class="section__label">Concept</p>
+      <h2 class="section__heading">わたしたちの想い</h2>
+      <div class="section__divider"></div>
+      <div class="concept__body fade-in">
+        <div class="concept__image">
+          <div class="photo">
+            <!-- <img src="images/concept.jpg" alt="コンセプト"> -->
+            <span class="photo__label">Concept Photo</span>
+          </div>
+          <svg class="concept__image-plumeria" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <g fill="rgba(255,255,255,0.5)">
+              <ellipse cx="100" cy="50" rx="28" ry="50" transform="rotate(0 100 100)"/>
+              <ellipse cx="100" cy="50" rx="28" ry="50" transform="rotate(72 100 100)"/>
+              <ellipse cx="100" cy="50" rx="28" ry="50" transform="rotate(144 100 100)"/>
+              <ellipse cx="100" cy="50" rx="28" ry="50" transform="rotate(216 100 100)"/>
+              <ellipse cx="100" cy="50" rx="28" ry="50" transform="rotate(288 100 100)"/>
+              <circle cx="100" cy="100" r="18" fill="rgba(255,255,255,0.7)"/>
+            </g>
+          </svg>
+        </div>
+        <div class="concept__text-area">
+          <p class="concept__quote">
+            忙しい毎日の中で、<br>
+            ふと立ち止まれる場所でありたい。
+          </p>
+          <p class="concept__desc">
+            現代を生きるわたしたちは、気づかないうちに心と体に疲れを溜めています。
+            COCOCOは「安眠」をテーマに、ハーブの力と温かなスチーム、
+            そして炭酸ヘッドスパの心地よさで、
+            お客さまを深いリラクゼーションへとお連れします。<br><br>
+            珈琲店に併設されたサロンという、ちょっとユニークなこの場所で、
+            施術後にはこだわりの一杯もお楽しみいただけます。
+            体がほぐれ、心がゆるみ、ぐっすり眠れる夜を ──
+            それがわたしたちの願いです。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OWNER ===== -->
+  <section class="section owner" id="owner">
+    <div class="section__inner">
+      <p class="section__label">Owner</p>
+      <h2 class="section__heading">オーナー紹介</h2>
+      <div class="section__divider"></div>
+      <div class="owner__body fade-in">
+        <div class="owner__photo-area">
+          <div class="owner__portrait">
+            <div class="photo">
+              <!-- <img src="images/owner.jpg" alt="オーナー"> -->
+              <span class="photo__label">Owner Photo</span>
+            </div>
+          </div>
+          <div class="owner__name-area">
+            <p class="owner__role">Owner / Therapist</p>
+            <p class="owner__name">お名前をここに</p>
+          </div>
+        </div>
+        <div class="owner__text-area">
+          <p class="owner__greeting">
+            はじめまして。<br>
+            安眠Salon COCOCOへようこそ。
+          </p>
+          <div class="owner__message">
+            <p>
+              このサロンは「ぐっすり眠れる夜を届けたい」という想いから生まれました。
+              忙しい日々の中で、知らず知らずのうちに緊張し続けている心と体。
+              ここでは、ハーブの香りとあたたかなスチームに包まれながら、
+              そのすべてを手放していただきたいのです。
+            </p>
+            <p>
+              自家焙煎珈琲COCOCOに併設するという少しユニークなスタイルは、
+              「日常の延長にある、でも特別な場所」でありたいという想いから。
+              施術後にお出しする一杯の珈琲まで、
+              ゆっくりとした時間をお過ごしいただければ嬉しいです。
+            </p>
+            <p>
+              おひとりおひとりのお体の状態に丁寧に向き合い、
+              「来てよかった」と思っていただける時間をお約束します。
+              どうぞお気軽にお越しください。
+            </p>
+          </div>
+          <div class="owner__qualifications">
+            <p class="owner__qual-title">Qualifications</p>
+            <ul class="owner__qual-list">
+              <!-- 実際の資格に差し替えてください -->
+              <li>ハマム浴セラピスト</li>
+              <li>ヘッドスパニスト</li>
+              <li>アロマテラピー検定</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICE ===== -->
+  <section class="section service" id="service">
+    <div class="section__inner">
+      <p class="section__label">Service</p>
+      <h2 class="section__heading">施術メニュー</h2>
+      <div class="section__divider"></div>
+      <div class="service__list">
+        <div class="service__item fade-in">
+          <div class="service__item-photo">
+            <div class="photo" style="background:linear-gradient(135deg,#e8c0bc,#d4a0a0)">
+              <!-- <img src="images/service-hammam.jpg" alt="ハマム浴"> -->
+              <span class="photo__label">ハマム浴</span>
+            </div>
+          </div>
+          <div class="service__item-body">
+            <div class="service__item-header">
+              <h3 class="service__item-name">ハマム浴 ── ハーブスチーム&炭酸ヘッドスパ</h3>
+              <span class="service__item-price">&yen;4,200</span>
+            </div>
+            <p class="service__item-desc">
+              熊本では希少な本格ハマム浴。ハーブスチームと炭酸ヘッドスパのW温活アプローチで、
+              体の芯からじんわり温まります。3種類のハーブブレンドからお体の状態に合わせてお選びいただけます。
+              寝ながらの施術で、心地よい眠りに誘われる方も。
+            </p>
+            <div class="service__item-tags">
+              <span class="service__item-tag">温活</span>
+              <span class="service__item-tag">ハーブスチーム</span>
+              <span class="service__item-tag">炭酸ヘッドスパ</span>
+              <span class="service__item-tag">リラクゼーション</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PHOTO SHOWCASE ===== -->
+  <div class="photo-showcase">
+    <!-- 写真を差し替えてください -->
+    <div class="photo" style="background:linear-gradient(135deg,#e0b5b0,#d4a0a0)"><span class="photo__label">Salon 1</span></div>
+    <div class="photo" style="background:linear-gradient(135deg,#f0d0cc,#e0bab5)"><span class="photo__label">Salon 2</span></div>
+    <div class="photo" style="background:linear-gradient(135deg,#f5ddd8,#e8c5c0)"><span class="photo__label">Salon 3</span></div>
+    <div class="photo" style="background:linear-gradient(135deg,#edd0cc,#dca8a8)"><span class="photo__label">Salon 4</span></div>
+    <div class="photo" style="background:linear-gradient(135deg,#f2d8d5,#e0b5b0)"><span class="photo__label">Salon 5</span></div>
+  </div>
+
+  <!-- ===== FLOW ===== -->
+  <section class="section flow" id="flow">
+    <div class="section__inner">
+      <p class="section__label">Flow</p>
+      <h2 class="section__heading">ご来店の流れ</h2>
+      <div class="section__divider"></div>
+    </div>
+    <div style="max-width:900px;margin:0 auto;">
+      <div class="flow__steps fade-in">
+
+        <div class="flow__step">
+          <div class="flow__step-photo">
+            <div class="photo" style="background:linear-gradient(135deg,#f0d0cc,#e0bab5)">
+              <!-- <img src="images/flow-1.jpg" alt="ご予約"> -->
+              <span class="photo__label">Reservation</span>
+            </div>
+          </div>
+          <div class="flow__step-content">
+            <p class="flow__step-num">01</p>
+            <h3 class="flow__step-title">ご予約</h3>
+            <p class="flow__step-text">
+              Hot Pepper Beautyまたはお電話にてご予約ください。<br>
+              当日のご予約も空きがあればお受けしております。
+            </p>
+          </div>
+        </div>
+
+        <div class="flow__step">
+          <div class="flow__step-photo">
+            <div class="photo" style="background:linear-gradient(135deg,#e8c5c0,#d4a8a5)">
+              <!-- <img src="images/flow-2.jpg" alt="ご来店"> -->
+              <span class="photo__label">Arrival</span>
+            </div>
+          </div>
+          <div class="flow__step-content">
+            <p class="flow__step-num">02</p>
+            <h3 class="flow__step-title">ご来店</h3>
+            <p class="flow__step-text">
+              COFFEE看板の入口からお入りください。<br>
+              駐車場は珈琲店前に5台分ございます。
+            </p>
+          </div>
+        </div>
+
+        <div class="flow__step">
+          <div class="flow__step-photo">
+            <div class="photo" style="background:linear-gradient(135deg,#f5ddd8,#e0b5b0)">
+              <!-- <img src="images/flow-3.jpg" alt="カウンセリング"> -->
+              <span class="photo__label">Counseling</span>
+            </div>
+          </div>
+          <div class="flow__step-content">
+            <p class="flow__step-num">03</p>
+            <h3 class="flow__step-title">カウンセリング</h3>
+            <p class="flow__step-text">
+              お体の状態やお悩みをお伺いし、<br>
+              3種類のハーブブレンドから最適なものをお選びします。
+            </p>
+          </div>
+        </div>
+
+        <div class="flow__step">
+          <div class="flow__step-photo">
+            <div class="photo" style="background:linear-gradient(135deg,#edd0cc,#daa8a5)">
+              <!-- <img src="images/flow-4.jpg" alt="施術"> -->
+              <span class="photo__label">Treatment</span>
+            </div>
+          </div>
+          <div class="flow__step-content">
+            <p class="flow__step-num">04</p>
+            <h3 class="flow__step-title">施術</h3>
+            <p class="flow__step-text">
+              完全個室の空間で、ハーブスチームと炭酸ヘッドスパを。<br>
+              寝ながらの施術で深いリラックスを体感してください。
+            </p>
+          </div>
+        </div>
+
+        <div class="flow__step">
+          <div class="flow__step-photo">
+            <div class="photo" style="background:linear-gradient(135deg,#f2d5d0,#e8bfbc)">
+              <!-- <img src="images/flow-5.jpg" alt="アフタータイム"> -->
+              <span class="photo__label">After Time</span>
+            </div>
+          </div>
+          <div class="flow__step-content">
+            <p class="flow__step-num">05</p>
+            <h3 class="flow__step-title">アフタータイム</h3>
+            <p class="flow__step-text">
+              施術後は、自家焙煎のこだわり珈琲をご用意。<br>
+              心地よい余韻をゆっくりとお楽しみください。
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section faq" id="faq">
+    <div class="section__inner">
+      <p class="section__label">FAQ</p>
+      <h2 class="section__heading">よくあるご質問</h2>
+      <div class="section__divider"></div>
+      <div class="faq__list fade-in">
+
+        <div class="faq__item">
+          <button class="faq__question">
+            <span class="faq__q-mark">Q.</span>
+            <span>予約なしでも利用できますか？</span>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <span class="faq__a-mark">A.</span>
+              <p class="faq__a-text">
+                完全予約制のため、事前のご予約をお願いしております。
+                ただし、当日でも空きがあればお受けできますので、
+                お電話にてお気軽にお問い合わせください。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question">
+            <span class="faq__q-mark">Q.</span>
+            <span>男性も利用できますか？</span>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <span class="faq__a-mark">A.</span>
+              <p class="faq__a-text">
+                はい、男性のお客さまもご利用いただけます。
+                性別を問わず、心地よい時間をお過ごしいただけるサロンです。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question">
+            <span class="faq__q-mark">Q.</span>
+            <span>ハマム浴とは何ですか？</span>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <span class="faq__a-mark">A.</span>
+              <p class="faq__a-text">
+                ハマム浴は中東発祥の伝統的なスチームバスをベースにしたリラクゼーション法です。
+                当サロンでは、厳選したハーブスチームと炭酸ヘッドスパを組み合わせた
+                オリジナルの施術で、体の芯から温めて深いリラックスへと導きます。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question">
+            <span class="faq__q-mark">Q.</span>
+            <span>施術時間はどのくらいですか？</span>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <span class="faq__a-mark">A.</span>
+              <p class="faq__a-text">
+                メニューにより異なりますが、カウンセリングからアフタータイムまで
+                おおよそ60〜90分ほどお時間をいただいております。
+                お時間に余裕を持ってお越しください。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question">
+            <span class="faq__q-mark">Q.</span>
+            <span>駐車場はありますか？</span>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <span class="faq__a-mark">A.</span>
+              <p class="faq__a-text">
+                はい、珈琲店前に5台分の駐車場がございます。
+                お車でお気軽にお越しください。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question">
+            <span class="faq__q-mark">Q.</span>
+            <span>どのような支払い方法に対応していますか？</span>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <span class="faq__a-mark">A.</span>
+              <p class="faq__a-text">
+                現金のほか、各種クレジットカード（Visa / Mastercard / JCB / American Express）、
+                PayPay、d払いに対応しております。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question">
+            <span class="faq__q-mark">Q.</span>
+            <span>キャンセルはできますか？</span>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <span class="faq__a-mark">A.</span>
+              <p class="faq__a-text">
+                ご予約の変更・キャンセルはお早めにご連絡ください。
+                当日キャンセルの場合はキャンセル料が発生する場合がございます。
+                詳しくはお電話にてご確認ください。
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INFO ===== -->
+  <section class="section info" id="info">
+    <div class="section__inner">
+      <p class="section__label">Information</p>
+      <h2 class="section__heading">サロン情報</h2>
+      <div class="section__divider"></div>
+      <div class="info__grid fade-in">
+        <table class="info__table">
+          <tr>
+            <th>サロン名</th>
+            <td>安眠Salon COCOCO</td>
+          </tr>
+          <tr>
+            <th>住所</th>
+            <td>熊本県玉名市中1342-9<br>丸商リンクビル1F</td>
+          </tr>
+          <tr>
+            <th>電話番号</th>
+            <td><a href="tel:0968-80-0532" style="color:#b0545e;">0968-80-0532</a></td>
+          </tr>
+          <tr>
+            <th>営業時間</th>
+            <td>10:00 - 17:00（最終受付 16:00）</td>
+          </tr>
+          <tr>
+            <th>定休日</th>
+            <td>日曜・月曜 / 不定休</td>
+          </tr>
+          <tr>
+            <th>アクセス</th>
+            <td>旧208号線沿い<br>ハローワーク近く、リラクル玉名隣<br>駐車場5台完備</td>
+          </tr>
+          <tr>
+            <th>お支払い</th>
+            <td>現金 / Visa / Mastercard / JCB<br>American Express / PayPay / d払い</td>
+          </tr>
+        </table>
+        <div class="info__map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3336.5!2d130.558!3d32.932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z44CSODYxLTAwMDEg54aK5pys55yM546J5ZCN5biC5LitMTM0MuKIkjk!5e0!3m2!1sja!2sjp!4v1"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <!-- サロン周辺・内観写真 -->
+        <div class="info__photos fade-in">
+          <div class="photo" style="background:linear-gradient(135deg,#f0d0cc,#e0bab5)">
+            <span class="photo__label">外観</span>
+          </div>
+          <div class="photo" style="background:linear-gradient(135deg,#f5ddd8,#e8c5c0)">
+            <span class="photo__label">入口</span>
+          </div>
+          <div class="photo" style="background:linear-gradient(135deg,#edd0cc,#dca8a8)">
+            <span class="photo__label">駐車場</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INSTAGRAM ===== -->
+  <section class="section instagram" id="instagram">
+    <div class="section__inner">
+      <p class="section__label">Instagram</p>
+      <h2 class="section__heading">最新情報はInstagramで</h2>
+      <div class="section__divider"></div>
+      <div class="instagram__grid fade-in">
+        <div class="instagram__placeholder"></div>
+        <div class="instagram__placeholder"></div>
+        <div class="instagram__placeholder"></div>
+        <div class="instagram__placeholder"></div>
+        <div class="instagram__placeholder"></div>
+        <div class="instagram__placeholder"></div>
+      </div>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="instagram__link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5"/>
+          <circle cx="12" cy="12" r="5"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+        Follow us on Instagram
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== CTA BANNER ===== -->
+  <section class="cta-banner">
+    <p class="cta-banner__text">
+      日々の疲れを、ここで手放して。<br>
+      あなたのための癒しの時間をご予約ください。
+    </p>
+    <a href="https://beauty.hotpepper.jp/kr/slnH000737938/" target="_blank" rel="noopener" class="cta-banner__btn">
+      ご予約はこちら
+    </a>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p class="footer__logo">COCOCO</p>
+    <p class="footer__address">
+      熊本県玉名市中1342-9 丸商リンクビル1F<br>
+      TEL 0968-80-0532
+    </p>
+    <div class="footer__social">
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+        </svg>
+      </a>
+      <a href="https://beauty.hotpepper.jp/kr/slnH000737938/" target="_blank" rel="noopener" aria-label="Hot Pepper Beauty">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+      </a>
+    </div>
+    <p class="footer__copy">&copy; 2024 安眠Salon COCOCO. All rights reserved.</p>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Scroll fade-in
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // FAQ accordion
+    document.querySelectorAll('.faq__question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq__item').forEach(i => i.classList.remove('open'));
+        // Toggle current
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+
+</body>
+</html>
