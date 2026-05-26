@@ -527,6 +527,50 @@
       color: #b0646e;
       letter-spacing: 0.05em;
     }
+    .service__intro {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.92rem;
+      font-weight: 300;
+      line-height: 2.2;
+      color: #6a5555;
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 12px;
+    }
+    .service__item-duration {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      color: #b88a8a;
+      margin-bottom: 14px;
+    }
+    .service__more {
+      text-align: center;
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(200, 160, 160, 0.2);
+    }
+    .service__more-text {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: #7a6a6a;
+      line-height: 2;
+      margin-bottom: 24px;
+    }
+    .service__more-link {
+      display: inline-block;
+      padding: 14px 42px;
+      border: 1px solid #c9707a;
+      color: #c9707a;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      transition: all 0.4s;
+    }
+    .service__more-link:hover {
+      background: #c9707a;
+      color: #fff;
+    }
 
     /* ============ PHOTO SHOWCASE (mid-page) ============ */
     .photo-showcase {
@@ -1015,7 +1059,7 @@
         深い眠りへと導く<br>
         あなただけの癒しの時間
       </p>
-      <a href="https://beauty.hotpepper.jp/kr/slnH000737938/" target="_blank" rel="noopener" class="hero__cta">RESERVATION</a>
+      <a href="https://tol-app.jp/s/0gu9utaqe08k96j256qb" target="_blank" rel="noopener" class="hero__cta">RESERVATION</a>
     </div>
   </section>
 
@@ -1172,9 +1216,15 @@
   <section class="section service" id="service">
     <div class="section__inner">
       <p class="section__label">Service</p>
-      <h2 class="section__heading">施術メニュー</h2>
+      <h2 class="section__heading">看板メニュー</h2>
       <div class="section__divider"></div>
+      <p class="service__intro">
+        お体の状態に合わせて、ハマム浴・ヘッドスパ・水素吸入から<br>
+        最適な組み合わせをご提案いたします。
+      </p>
       <div class="service__list">
+
+        <!-- Menu 1: ハマム浴60分＋足湯 -->
         <div class="service__item fade-in">
           <div class="service__item-photo">
             <div class="photo">
@@ -1183,22 +1233,84 @@
           </div>
           <div class="service__item-body">
             <div class="service__item-header">
-              <h3 class="service__item-name">ハマム浴 ── ハーブスチーム&炭酸ヘッドスパ</h3>
-              <span class="service__item-price">&yen;4,200</span>
+              <h3 class="service__item-name">ハマム浴60分 ＋ 足湯</h3>
+              <span class="service__item-price">&yen;5,500</span>
             </div>
+            <p class="service__item-duration">60 MIN</p>
             <p class="service__item-desc">
-              熊本では希少な本格ハマム浴。ハーブスチームと炭酸ヘッドスパのW温活アプローチで、
-              体の芯からじんわり温まります。3種類のハーブブレンドからお体の状態に合わせてお選びいただけます。
-              寝ながらの施術で、心地よい眠りに誘われる方も。
+              熊本では希少な本格ハマム浴。ハーブスチームで体の芯から温め、
+              足湯でじんわりと巡らせる定番のコースです。
+              3種類のハーブブレンドからお体の状態に合わせてお選びいただけます。
             </p>
             <div class="service__item-tags">
               <span class="service__item-tag">温活</span>
               <span class="service__item-tag">ハーブスチーム</span>
-              <span class="service__item-tag">炭酸ヘッドスパ</span>
-              <span class="service__item-tag">リラクゼーション</span>
+              <span class="service__item-tag">足湯</span>
             </div>
           </div>
         </div>
+
+        <!-- Menu 2: ご褒美コース -->
+        <div class="service__item fade-in">
+          <div class="service__item-photo">
+            <div class="photo">
+              <img src="https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?w=600&h=500&fit=crop" alt="ご褒美コース">
+            </div>
+          </div>
+          <div class="service__item-body">
+            <div class="service__item-header">
+              <h3 class="service__item-name">ご褒美コース ── ハマム60分 ＋ ヘッドスパ30分</h3>
+              <span class="service__item-price">&yen;7,000</span>
+            </div>
+            <p class="service__item-duration">90 MIN</p>
+            <p class="service__item-desc">
+              ハマム浴のあとに炭酸ヘッドスパで頭皮までじっくりほぐす、贅沢なフルコース。
+              「気づいたら眠ってしまっていた」と仰る方が多い、いちばん人気のメニューです。
+            </p>
+            <div class="service__item-tags">
+              <span class="service__item-tag">ハマム浴</span>
+              <span class="service__item-tag">炭酸ヘッドスパ</span>
+              <span class="service__item-tag">プレミアム</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Menu 3: 超高濃度水素吸入 -->
+        <div class="service__item fade-in">
+          <div class="service__item-photo">
+            <div class="photo">
+              <img src="https://images.unsplash.com/photo-1552693673-1bf958298935?w=600&h=500&fit=crop" alt="超高濃度水素吸入">
+            </div>
+          </div>
+          <div class="service__item-body">
+            <div class="service__item-header">
+              <h3 class="service__item-name">超高濃度水素吸入 ＋ 水素水飲み放題</h3>
+              <span class="service__item-price">&yen;3,000〜</span>
+            </div>
+            <p class="service__item-duration">40 / 60 MIN</p>
+            <p class="service__item-desc">
+              高濃度の水素を取り入れて、体の内側からリセット。水素水も飲み放題でご用意しております。
+              ハマム浴との組み合わせもおすすめです。
+            </p>
+            <div class="service__item-tags">
+              <span class="service__item-tag">水素吸入</span>
+              <span class="service__item-tag">水素水</span>
+              <span class="service__item-tag">ウェルネス</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 全メニューリンク -->
+      <div class="service__more fade-in">
+        <p class="service__more-text">
+          この他にも、お試しコースや期間限定キャンペーンをご用意しております。<br>
+          最新メニューと空き状況はオンライン予約ページでご確認ください。
+        </p>
+        <a href="https://tol-app.jp/s/0gu9utaqe08k96j256qb" target="_blank" rel="noopener" class="service__more-link">
+          全メニュー・空き状況を見る →
+        </a>
       </div>
     </div>
   </section>
@@ -1232,7 +1344,7 @@
             <p class="flow__step-num">01</p>
             <h3 class="flow__step-title">ご予約</h3>
             <p class="flow__step-text">
-              Hot Pepper Beautyまたはお電話にてご予約ください。<br>
+              オンライン予約（tol-app）またはお電話にてご予約ください。<br>
               当日のご予約も空きがあればお受けしております。
             </p>
           </div>
@@ -1526,7 +1638,7 @@
       日々の疲れを、ここで手放して。<br>
       あなたのための癒しの時間をご予約ください。
     </p>
-    <a href="https://beauty.hotpepper.jp/kr/slnH000737938/" target="_blank" rel="noopener" class="cta-banner__btn">
+    <a href="https://tol-app.jp/s/0gu9utaqe08k96j256qb" target="_blank" rel="noopener" class="cta-banner__btn">
       ご予約はこちら
     </a>
   </section>
@@ -1544,9 +1656,9 @@
           <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
         </svg>
       </a>
-      <a href="https://beauty.hotpepper.jp/kr/slnH000737938/" target="_blank" rel="noopener" aria-label="Hot Pepper Beauty">
+      <a href="https://tol-app.jp/s/0gu9utaqe08k96j256qb" target="_blank" rel="noopener" aria-label="オンライン予約">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+          <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
         </svg>
       </a>
     </div>
