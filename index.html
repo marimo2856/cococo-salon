@@ -566,19 +566,41 @@
       color: #fdfaf2;
     }
 
-    /* ============ PHOTO SHOWCASE (mid-page) ============ */
+    /* ============ PHOTO SHOWCASE (marquee, right→left) ============ */
     .photo-showcase {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 240px 240px;
-      gap: 4px;
+      overflow: hidden;
+      width: 100%;
+      padding: 0;
+      mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
     }
-    .photo-showcase .photo:first-child {
-      grid-column: 1 / 2;
-      grid-row: 1 / 3;
+    .photo-showcase__track {
+      display: flex;
+      gap: 12px;
+      width: max-content;
+      animation: photo-marquee 60s linear infinite;
     }
-    .photo-showcase .photo { transition: transform 0.5s; }
-    .photo-showcase .photo:hover { transform: scale(1.02); z-index: 1; }
+    .photo-showcase__track:hover { animation-play-state: paused; }
+    .photo-showcase .photo {
+      flex: 0 0 auto;
+      width: 320px;
+      height: 220px;
+      overflow: hidden;
+      border-radius: 2px;
+    }
+    .photo-showcase .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    @keyframes photo-marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .photo-showcase__track { animation: none; }
+    }
 
     /* ============ FLOW ============ */
     .flow {
@@ -956,11 +978,11 @@
       .owner__qual-list { justify-content: center; }
       .service__item { flex-direction: column; }
       .service__item-photo { flex: none; height: 200px; }
-      .photo-showcase {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 200px 200px 200px;
+      .photo-showcase .photo {
+        width: 220px;
+        height: 160px;
       }
-      .photo-showcase .photo:first-child { grid-column: 1 / 3; grid-row: 1 / 2; }
+      .photo-showcase__track { gap: 8px; animation-duration: 45s; }
       .flow__step,
       .flow__step:nth-child(even) {
         flex-direction: column;
@@ -1300,13 +1322,23 @@
     </div>
   </section>
 
-  <!-- ===== PHOTO SHOWCASE ===== -->
-  <div class="photo-showcase">
-    <div class="photo"><img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&h=960&fit=crop" alt="アロマオイル"></div>
-    <div class="photo"><img src="https://images.unsplash.com/photo-1552693673-1bf958298935?w=600&h=480&fit=crop" alt="ハーブティー"></div>
-    <div class="photo"><img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=600&h=480&fit=crop" alt="スパ空間"></div>
-    <div class="photo"><img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&h=480&fit=crop" alt="タオルとキャンドル"></div>
-    <div class="photo"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=480&fit=crop" alt="スキンケア"></div>
+  <!-- ===== PHOTO SHOWCASE (marquee, right→left) ===== -->
+  <div class="photo-showcase" aria-label="サロンの雰囲気">
+    <div class="photo-showcase__track">
+      <div class="photo"><img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=640&h=440&fit=crop" alt="アロマオイル"></div>
+      <div class="photo"><img src="https://images.unsplash.com/photo-1552693673-1bf958298935?w=640&h=440&fit=crop" alt="ハーブティー"></div>
+      <div class="photo"><img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=640&h=440&fit=crop" alt="スパ空間"></div>
+      <div class="photo"><img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=640&h=440&fit=crop" alt="タオルとキャンドル"></div>
+      <div class="photo"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=640&h=440&fit=crop" alt="スキンケア"></div>
+      <div class="photo"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=640&h=440&fit=crop" alt="キャンドル"></div>
+      <!-- ループ用に同じ画像をもう一度 -->
+      <div class="photo" aria-hidden="true"><img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=640&h=440&fit=crop" alt=""></div>
+      <div class="photo" aria-hidden="true"><img src="https://images.unsplash.com/photo-1552693673-1bf958298935?w=640&h=440&fit=crop" alt=""></div>
+      <div class="photo" aria-hidden="true"><img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=640&h=440&fit=crop" alt=""></div>
+      <div class="photo" aria-hidden="true"><img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=640&h=440&fit=crop" alt=""></div>
+      <div class="photo" aria-hidden="true"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=640&h=440&fit=crop" alt=""></div>
+      <div class="photo" aria-hidden="true"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=640&h=440&fit=crop" alt=""></div>
+    </div>
   </div>
 
   <!-- ===== FLOW ===== -->
